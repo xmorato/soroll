@@ -16,7 +16,7 @@ git clone https://github.com/xmorato/soroll.git
 ## Set a .env.local in you source directory and add:
 REACT_APP_GOOGLE_SHEETS_DOC_ID=[you_key]
 
-##Launch stuff
+## Install dependencies & Launch stuff
 ```
 npm init
 npm start
