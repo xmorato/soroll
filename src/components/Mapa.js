@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const Mapa = (props) => {
 
-//    console.log('PROPS: ', props);
+    //    console.log('PROPS: ', props);
     const estilsMapa = {
         dark: 'mapbox://styles/mapbox/dark-v10',
         natural: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
@@ -24,7 +24,7 @@ const Mapa = (props) => {
     useEffect(() => {
         mapboxgl.accessToken =
             'pk.eyJ1IjoieGF2aW90cCIsImEiOiJja2F5Mnlnd3EwYzF1MzR1bG56czNnNnY4In0.LzCEft2g_0N9kuHVBgi8cA';
-        const initializeMap = ({mapContainer}) => {
+        const initializeMap = ({ mapContainer }) => {
             const map = new mapboxgl.Map({
                 container: mapContainer.current,
                 style: estilsMapa.outdoors, // stylesheet location
@@ -42,10 +42,10 @@ const Mapa = (props) => {
             });
         };
 
-        initializeMap({mapContainer});
+        initializeMap({ mapContainer });
     });
 
-    return <div ref={el => (mapContainer.current = el)} style={styles}/>;
+    return <div ref={el => (mapContainer.current = el)} style={styles} />;
 }
 
 export default Mapa;
