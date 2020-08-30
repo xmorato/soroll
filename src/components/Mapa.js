@@ -5,7 +5,6 @@ import { Button } from '../../node_modules/@material-ui/core';
 
 const Mapa = (props) => {
 
-    console.log('PROPS: ', props);
     const estilsMapa = {
         dark: 'mapbox://styles/mapbox/dark-v10',
         natural: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
