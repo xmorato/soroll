@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react'
-import mapboxgl from 'mapbox-gl'
+import React, { useState } from 'react'
+import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
+import { Button } from '../../node_modules/@material-ui/core';
 
 const Mapa = (props) => {
 
-    //    console.log('PROPS: ', props);
+    console.log('PROPS: ', props);
     const estilsMapa = {
         dark: 'mapbox://styles/mapbox/dark-v10',
         natural: 'mapbox://styles/mapbox/navigation-guidance-day-v4',
@@ -13,39 +14,62 @@ const Mapa = (props) => {
         satellit: 'mapbox://styles/mapbox/satellite-v9'
     };
 
-    const styles = {
+    const [viewPort, setViewPort] = useState({
         width: "100vh",
         height: "100vh",
-        position: ""
-    };
-
-    const mapContainer = useRef(null);
-
-    useEffect(() => {
-        mapboxgl.accessToken =
-            'pk.eyJ1IjoieGF2aW90cCIsImEiOiJja2F5Mnlnd3EwYzF1MzR1bG56czNnNnY4In0.LzCEft2g_0N9kuHVBgi8cA';
-        const initializeMap = ({ mapContainer }) => {
-            const map = new mapboxgl.Map({
-                container: mapContainer.current,
-                style: estilsMapa.outdoors, // stylesheet location
-                center: [1.975731, 41.266965],
-                zoom: 15
-            });
-
-            map.on("load", () => {
-                const coords = props.dades.map((dada) => {
-                    return (dada.coord)
-                });
-                coords.forEach((coordenada) => {
-                    new mapboxgl.Marker().setLngLat(coordenada).addTo(map)
-                });
-            });
-        };
-
-        initializeMap({ mapContainer });
+        position: "",
+        longitude: 1.975731,
+        latitude: 41.266965,
+        zoom: 15
     });
 
-    return <div ref={el => (mapContainer.current = el)} style={styles} />;
+    const [selectedPunt, setSelectedPunt] = useState(null);
+
+    return (
+        <div>
+            <ReactMapGl {...viewPort}
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                mapStyle={estilsMapa.dark}
+                onViewportChange={viewport => {
+                    setViewPort(viewport);
+                }}
+            >
+
+                {
+                    props.dades.map((punt, index) => {
+                        return (
+                            <Marker
+                                key={index}
+                                latitude={punt.coord.lat}
+                                longitude={punt.coord.lon}
+                            >
+                                <Button
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setSelectedPunt(punt);
+                                    }}>
+                                    <img src="./assets/puntCalent.png" alt={punt.carrer} />
+                                </Button>
+                            </Marker>
+                        )
+                    })
+                }
+
+                {selectedPunt ? (
+                    <Popup latitude={selectedPunt.coord.lat}
+                        longitude={selectedPunt.coord.lon}
+                        onClose={() => setSelectedPunt(null)}>
+                        <div>
+                            <h2>{selectedPunt.tipus}</h2>
+                            <h3>{selectedPunt.carrer}</h3>
+                            <p>{selectedPunt.coord.lat} - {selectedPunt.coord.lon}</p>
+                        </div>
+                    </Popup>)
+                    : null
+                }
+            </ReactMapGl>
+        </div>
+    )
 }
 
 export default Mapa;
