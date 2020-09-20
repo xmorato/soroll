@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
-import { Button } from '../../node_modules/@material-ui/core';
+import { Button } from '@material-ui/core';
 
 const Mapa = (props) => {
 
@@ -59,8 +59,9 @@ const Mapa = (props) => {
                         longitude={selectedPunt.coord.lon}
                         onClose={() => setSelectedPunt(null)}>
                         <div>
-                            <h2>{selectedPunt.tipus}</h2>
+                            <h2>{selectedPunt.tipus} - {selectedPunt.data.toDateString("es-ES")} </h2>
                             <h3>{selectedPunt.carrer}</h3>
+                            <div>{selectedPunt.comentari}</div>
                             <p>{selectedPunt.coord.lat} - {selectedPunt.coord.lon}</p>
                         </div>
                     </Popup>)
