@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f361e03.chunk.css",
-    "main.js": "/static/js/main.46f43cda.chunk.js",
-    "main.js.map": "/static/js/main.46f43cda.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.738c5e2f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.738c5e2f.js.map",
-    "static/css/2.b4a16772.chunk.css": "/static/css/2.b4a16772.chunk.css",
-    "static/js/2.3124a88f.chunk.js": "/static/js/2.3124a88f.chunk.js",
-    "static/js/2.3124a88f.chunk.js.map": "/static/js/2.3124a88f.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.0beeeaf5fb80b9a93e95f8667e620ecf.js": "/precache-manifest.0beeeaf5fb80b9a93e95f8667e620ecf.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.b4a16772.chunk.css.map": "/static/css/2.b4a16772.chunk.css.map",
-    "static/css/main.5f361e03.chunk.css.map": "/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.3124a88f.chunk.js.LICENSE.txt": "/static/js/2.3124a88f.chunk.js.LICENSE.txt"
+    "main.css": "/soroll/static/css/main.5f361e03.chunk.css",
+    "main.js": "/soroll/static/js/main.fe81d9d7.chunk.js",
+    "main.js.map": "/soroll/static/js/main.fe81d9d7.chunk.js.map",
+    "runtime-main.js": "/soroll/static/js/runtime-main.84642ba5.js",
+    "runtime-main.js.map": "/soroll/static/js/runtime-main.84642ba5.js.map",
+    "static/css/2.0a5b19c0.chunk.css": "/soroll/static/css/2.0a5b19c0.chunk.css",
+    "static/js/2.fcc59246.chunk.js": "/soroll/static/js/2.fcc59246.chunk.js",
+    "static/js/2.fcc59246.chunk.js.map": "/soroll/static/js/2.fcc59246.chunk.js.map",
+    "index.html": "/soroll/index.html",
+    "precache-manifest.9293e4c7b253c8020c305700228e554f.js": "/soroll/precache-manifest.9293e4c7b253c8020c305700228e554f.js",
+    "service-worker.js": "/soroll/service-worker.js",
+    "static/css/2.0a5b19c0.chunk.css.map": "/soroll/static/css/2.0a5b19c0.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/soroll/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.fcc59246.chunk.js.LICENSE.txt": "/soroll/static/js/2.fcc59246.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.738c5e2f.js",
-    "static/css/2.b4a16772.chunk.css",
-    "static/js/2.3124a88f.chunk.js",
+    "static/js/runtime-main.84642ba5.js",
+    "static/css/2.0a5b19c0.chunk.css",
+    "static/js/2.fcc59246.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.46f43cda.chunk.js"
+    "static/js/main.fe81d9d7.chunk.js"
   ]
 }
