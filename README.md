@@ -1,6 +1,10 @@
 # REC-PL (Ruidos en Castelldefels Platja)
 Control de punts calents, partint d'un full de càlcul de googhe sheet i de les dades entrades en ell es filtren per carregar la combo multi-selecció de les categories i en funció de les seleccionades es mostren al mapa.
 
+- Afegida funcionalitat de filtrar per dates i esborrar filtres
+- Afegida funcionalitat de picar sobre les icones de punts calents i obtenir informació
+- Some refactor ;) ... poc a poc i bona lletra
+
 # What I used
 - Js 
 - React and create-react-app 
