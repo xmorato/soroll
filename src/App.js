@@ -7,6 +7,8 @@ import { Box, Typography, Popover } from '@material-ui/core'
 import { Error } from './components/Error'
 import { Spinner } from './components/Spinner'
 import { ChoiceCalendar } from './components/ChoiceCalendar'
+import CountUp from 'react-countup';
+import IncidencesList from './components/IncidencesList'
 
 
 function App() {
@@ -85,13 +87,18 @@ function App() {
 
                         </Box>
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                            <Typography color="textPrimary" variant="h5"> Incidències: {incidenciesFiltrades.length} </Typography>
+                            <Typography color="textPrimary" variant="h5" gutterBottom> Incidències: {" "}
+                                <CountUp start={0}
+                                    end={incidenciesFiltrades.length}
+                                    duration={1.25}
+                                />
+                            </Typography>
                         </Box>
                         {Object.entries(dateRange).length !== 0 &&
                             <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                                <Typography color="colorSecondary"> Filtre actiu: </Typography>
+                                <Typography color="colorSecondary"> Filtre actiu: {" "} </Typography>
                                 <Typography color="error"> {(dateRange.startDate.toLocaleDateString())}</Typography>
-                                <Typography color="colorSecondary"><span> - </span> </Typography>
+                                <Typography color="colorSecondary">{" - "} </Typography>
                                 <Typography color="error"> {(dateRange.endDate.toLocaleDateString())}</Typography>
 
                             </Box>
@@ -124,6 +131,10 @@ function App() {
                                 </Popover>)
                                 : null}
                         </Box>
+                        {incidenciesFiltrades.length !== 0 ?
+                            <IncidencesList incidencies={incidenciesFiltrades} />
+                            : null
+                        }
 
 
 

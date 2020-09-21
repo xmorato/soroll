@@ -15,7 +15,7 @@ const Mapa = (props) => {
 
     const [viewPort, setViewPort] = useState({
         width: "100vh",
-        height: "100vh",
+        height: "80vh",
         position: "",
         longitude: 1.975731,
         latitude: 41.266965,
