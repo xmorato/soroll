@@ -101,7 +101,7 @@ function App() {
                             <Mapa dades={incidenciesFiltrades} />
                         </Box>
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                            <Typography> REC-PL: Ruidos en Castelldefels Playa by xmorato@gmail.com </Typography>
+                            <Typography> REC-PL: Ruidos en Castelldefels Playa - Per un millor barri </Typography>
                         </Box>
 
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
