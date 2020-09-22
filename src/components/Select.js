@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import NoSsr from '@material-ui/core/NoSsr';
 import CheckIcon from '@material-ui/icons/Check';
@@ -13,7 +13,7 @@ const Label = styled('label')`
 `;
 
 const InputWrapper = styled('div')`
-  width: 300px;
+  width: 90vw;
   border: 1px solid #d9d9d9;
   background-color: #fff;
   border-radius: 4px;
@@ -45,10 +45,10 @@ const InputWrapper = styled('div')`
 `;
 
 const Tag = styled(({ label, onDelete, ...props }) => (
-    <div {...props}>
-        <span>{label}</span>
-        <CloseIcon onClick={onDelete} />
-    </div>
+  <div {...props}>
+    <span>{label}</span>
+    <CloseIcon onClick={onDelete} />
+  </div>
 ))`
   display: flex;
   align-items: center;
@@ -128,59 +128,59 @@ const Listbox = styled('ul')`
 
 export default function CategoriesSelect(props) {
 
-    const {setSelected} = props;
-    const {
-        getRootProps,
-        getInputLabelProps,
-        getInputProps,
-        getTagProps,
-        getListboxProps,
-        getOptionProps,
-        groupedOptions,
-        value,
-        focused,
-        setAnchorEl,
-    } = useAutocomplete({
-        id: 'customized-hook-demo',
-        defaultValue: [],
-        multiple: true,
-        options: props.incidences,
-        getOptionSelected: (option, value) => {
-            return (option.title === value.title)
-        },
-        getOptionLabel: (option) => option.title
-    });
+  const { setSelected } = props;
+  const {
+    getRootProps,
+    getInputLabelProps,
+    getInputProps,
+    getTagProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+    value,
+    focused,
+    setAnchorEl,
+  } = useAutocomplete({
+    id: 'customized-hook-demo',
+    defaultValue: [],
+    multiple: true,
+    options: props.incidences,
+    getOptionSelected: (option, value) => {
+      return (option.title === value.title)
+    },
+    getOptionLabel: (option) => option.title
+  });
 
-    useEffect(()=> {
-        setSelected(value)
-    },[value, setSelected])
+  useEffect(() => {
+    setSelected(value)
+  }, [value, setSelected])
 
 
-    return (
-        <NoSsr>
-            <div>
-                <div {...getRootProps()}>
-                    <Label {...getInputLabelProps()}>{props.label}</Label>
-                    <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
-                        {value.map((option, index) => (
-                            <Tag label={option.title} {...getTagProps({ index })} />
-                        ))}
+  return (
+    <NoSsr>
+      <div>
+        <div {...getRootProps()}>
+          <Label {...getInputLabelProps()}>{props.label}</Label>
+          <InputWrapper ref={setAnchorEl} className={focused ? 'focused' : ''}>
+            {value.map((option, index) => (
+              <Tag label={option.title} {...getTagProps({ index })} />
+            ))}
 
-                        <input {...getInputProps()} />
-                    </InputWrapper>
-                </div>
-                {groupedOptions.length > 0 ? (
-                    <Listbox {...getListboxProps()}>
-                        {groupedOptions.map((option, index) => (
-                            <li {...getOptionProps({ option, index })}>
-                                <span>{option.title}</span>
-                                <CheckIcon fontSize="small" />
-                            </li>
-                        ))}
-                    </Listbox>
-                ) : null}
-            </div>
-        </NoSsr>
-    );
+            <input {...getInputProps()} />
+          </InputWrapper>
+        </div>
+        {groupedOptions.length > 0 ? (
+          <Listbox {...getListboxProps()}>
+            {groupedOptions.map((option, index) => (
+              <li {...getOptionProps({ option, index })}>
+                <span>{option.title}</span>
+                <CheckIcon fontSize="small" />
+              </li>
+            ))}
+          </Listbox>
+        ) : null}
+      </div>
+    </NoSsr>
+  );
 }
 

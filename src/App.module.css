@@ -1,0 +1,18 @@
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  flex-direction: initial;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding-bottom: 5px;
+  background-color: rgb(182, 177, 252);
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}

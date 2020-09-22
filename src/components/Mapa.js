@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
 import { Button } from '@material-ui/core';
+import imatge from "../puntCalent.png"
 
 const Mapa = (props) => {
 
@@ -15,7 +16,7 @@ const Mapa = (props) => {
 
     const [viewPort, setViewPort] = useState({
         width: "100vh",
-        height: "80vh",
+        height: "60vh",
         position: "",
         longitude: 1.975731,
         latitude: 41.266965,
@@ -47,7 +48,7 @@ const Mapa = (props) => {
                                         e.preventDefault();
                                         setSelectedPunt(punt);
                                     }}>
-                                    <img src="./assets/puntCalent.png" alt={punt.carrer} />
+                                    <img src={imatge} alt={punt.carrer} />
                                 </Button>
                             </Marker>
                         )

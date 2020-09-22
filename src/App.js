@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
+import styles from './App.module.css';
 import CategoriesSelect from "./components/Select";
 import Mapa from "./components/Mapa";
 import UseGetData from "./components/UseGetData";
-import { Box, Typography, Popover } from '@material-ui/core'
+import { Box, Typography, Popover, Button } from '@material-ui/core'
 import { Error } from './components/Error'
 import { Spinner } from './components/Spinner'
 import { ChoiceCalendar } from './components/ChoiceCalendar'
@@ -77,17 +77,17 @@ function App() {
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
                             <CategoriesSelect selected={selected}
                                 setSelected={setSelected}
-                                label=""
+                                label="Selecciona el(s) tipus de incidències"
                                 incidences={tipusIncidencies} />
-                            <button onClick={toggleCalendar}><span role="img" aria-label="filtre">📅</span> FILTRAR DATES </button>
-                            {Object.entries(dateRange).length !== 0 &&
-                                <button onClick={resetFiltro}> <span role="img" aria-label="reset">🗑️</span> SENSE FILTRE </button>
-                            }
-
-
                         </Box>
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                            <Typography color="textPrimary" variant="h5" gutterBottom> Incidències: {" "}
+                            <Button color="primary" onClick={toggleCalendar}><span role="img" aria-label="filtre">📅</span>{" "}Filtrar per Dates</Button>
+                            {Object.entries(dateRange).length !== 0 &&
+                                <Button color="secondary" onClick={resetFiltro}> <span role="img" aria-label="reset">🗑️</span>{" "}Esborrar filtre</Button>
+                            }
+                        </Box>
+                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
+                            <Typography color="textPrimary" variant="h6" gutterBottom> Incidències: {" "}
                                 <CountUp start={0}
                                     end={incidenciesFiltrades.length}
                                     duration={1.25}
@@ -104,40 +104,38 @@ function App() {
                             </Box>
                         }
 
-                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
+                        <Box m={2} display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
                             <Mapa dades={incidenciesFiltrades} />
                         </Box>
-                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                            <Typography> REC-PL: Ruidos en Castelldefels Playa - Per un millor barri - </Typography>
-                        </Box>
-
-                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
-                            {showCalendar ? (
-                                <Popover
-                                    open={showCalendar}
-                                    onClose={handleClose}
-                                    elevation={20}
-                                    anchorOrigin={{
-                                        vertical: 'center',
-                                        horizontal: 'center',
-                                    }}
-                                    transformOrigin={{
-                                        vertical: 'center',
-                                        horizontal: 'center',
-                                    }}
-                                >
-                                    <Typography align="center">  Selecciona dues dates o un rang a la columna de la dreta - ESC per sortir</Typography>
-                                    <ChoiceCalendar onChangeDate={onChangeDateOnCalendar} />
-                                </Popover>)
-                                : null}
-                        </Box>
+                        {showCalendar ? (
+                            <Popover
+                                open={showCalendar}
+                                onClose={handleClose}
+                                elevation={20}
+                                anchorOrigin={{
+                                    vertical: 'center',
+                                    horizontal: 'top',
+                                }}
+                                transformOrigin={{
+                                    vertical: 'center',
+                                    horizontal: 'center',
+                                }}
+                            >
+                                <Typography align="center">  Selecciona dues dates o un rang a la columna de la dreta - ESC per sortir</Typography>
+                                <ChoiceCalendar onChangeDate={onChangeDateOnCalendar} />
+                            </Popover>)
+                            : null}
                         {incidenciesFiltrades.length !== 0 ?
-                            <IncidencesList incidencies={incidenciesFiltrades} />
+                        
+                            <div id="principal" className={styles.cardsContainer}>
+                                  <IncidencesList incidencies={incidenciesFiltrades} />
+                            </div>
+
                             : null
                         }
-
-
-
+                    </Box>
+                    <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
+                        <Typography style={{ "fontSize": "0.8rem" }}> REC-PL: Ruidos en Castelldefels Playa, fem un millor barri </Typography>
                     </Box>
                 </div>)}
 
