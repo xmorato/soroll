@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
 import { Button } from '@material-ui/core';
-import imatge from "../puntCalent.png"
+import "../css/icona.css"
+import NewReleasesTwoToneIcon from '@material-ui/icons/NewReleasesTwoTone';
+//import NewReleasesOutlinedIcon from '@material-ui/icons/NewReleasesOutlined';
 
 const Mapa = (props) => {
 
@@ -48,7 +50,8 @@ const Mapa = (props) => {
                                         e.preventDefault();
                                         setSelectedPunt(punt);
                                     }}>
-                                    <img src={imatge} alt={punt.carrer} />
+                                    <NewReleasesTwoToneIcon className="Icona" fontSize={"large"} />
+                                    {/* <img src={imatge} alt={punt.carrer} /> */}
                                 </Button>
                             </Marker>
                         )
