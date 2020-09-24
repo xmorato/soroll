@@ -60,13 +60,13 @@ function App() {
                 <div className="App">
                     <Box display={"flex"}
                         style={{ "flexDirection": "column", "alignItems": "flex-start", "width": "-webkit-fill-available" }}>
-                        <Box display={"flex"} style={{ "marginBottom": "10px", "width": "-webkit-fill-available", "justifyContent": "center" }}>
+                        <div className={styles.SearchBarContainer}>
                             <CategoriesSelect
                                 selected={selected}
                                 setSelected={setSelected}
                                 label="Selecciona el(s) tipus de incidències"
                                 incidences={tipusIncidencies} />
-                        </Box>
+                        </div>
                         <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
                             <Button color="primary" onClick={toggleCalendar}><EventAvailableIcon />{" "}Filtrar per Dates</Button>
                             {Object.entries(dateRange).length !== 0 &&
