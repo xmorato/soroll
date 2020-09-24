@@ -3,17 +3,15 @@ import styles from './App.module.css';
 import CategoriesSelect from "./components/Select";
 import Mapa from "./components/Mapa";
 import UseGetData from "./components/UseGetData";
-import { Box, Typography, Popover, Button } from '@material-ui/core'
+import { Box, Typography, Button } from '@material-ui/core'
 import { Error } from './components/Error'
 import { Spinner } from './components/Spinner'
 import CountUp from 'react-countup';
 import IncidencesList from './components/IncidencesList'
-import IncidencesBoard from './components/IncidencesBoard';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import EventBusyIcon from '@material-ui/icons/EventBusy';
 import { filterData } from './utils/filterData'
 import { ShowDateRangeFilter } from './components/dates/ShowDateRangeFilter'
-import { ChoiceCalendar } from './components/dates/ChoiceCalendar'
 import { ShowDateRangePicker } from './components/dates/ShowDateRangePicker'
 
 
@@ -67,7 +65,7 @@ function App() {
                                 label="Selecciona el(s) tipus de incidències"
                                 incidences={tipusIncidencies} />
                         </div>
-                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
+                        <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center", "marginTop": "10px" }}>
                             <Button color="primary" onClick={toggleCalendar}><EventAvailableIcon />{" "}Filtrar per Dates</Button>
                             {Object.entries(dateRange).length !== 0 &&
                                 <Button color="secondary" onClick={resetFiltro}> <EventBusyIcon />{" "}Esborrar filtre</Button>

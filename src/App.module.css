@@ -28,3 +28,9 @@
   z-index: 10000;
   margin:auto 
 }
+
+.ShowDateRangeFilter {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+}
