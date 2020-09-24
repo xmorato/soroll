@@ -7,7 +7,7 @@ export const UseTransformFinalData = (dadesFromGoogle, selected, dateRange) => {
     });
 
     const finalData = extractDataFromSheet.map((elem) => {
-        console.log("ELEM:", elem);
+        //       console.log("ELEM:", elem);
         const _DATA = 0, _LAT = 2, _LON = 3, _CARRER = 5, _TIPUS = 6, _COMENTARI = 8;
         let coordenada = { coord: { lat: 0, lon: 0 } };
         const _lat = elem[_LAT].split(":");
@@ -16,10 +16,10 @@ export const UseTransformFinalData = (dadesFromGoogle, selected, dateRange) => {
         const _tipus = elem[_TIPUS].split(":");
         const _comentari = elem[_COMENTARI].split(":");
         let _data = elem[_DATA].split(":")
-        console.log("_comentari:", _comentari[1])
+        //     console.log("_comentari:", _comentari[1])
         _data = new Date(_data[1].trimLeft()); // 1st argument - string, 2nd argument - format
         //_data = new Date("2020/08/15");
-        console.log("_data:", _data)
+        //     console.log("_data:", _data)
 
         let final = {
             ...coordenada, coord: {
@@ -72,8 +72,8 @@ export const UseTransformFinalData = (dadesFromGoogle, selected, dateRange) => {
     });*/
 
     const tipusIncidencies = _incidencesType(finalData);
-    console.log("inicidencies:", finalData);
-    console.log("tipus:", tipusIncidencies)
+    //    console.log("inicidencies:", finalData);
+    //    console.log("tipus:", tipusIncidencies)
     return { tipusIncidencies, incidencies: finalData }
 }
 
