@@ -85,24 +85,6 @@ function App() {
                         <Box m={2} display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
                             <Mapa dades={incidenciesFiltrades} />
                         </Box>
-                        {/* {showCalendar ? (
-                            <Popover
-                                open={showCalendar}
-                                onClose={handleClose}
-                                elevation={8}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'center',
-                                }}
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'center',
-                                }}
-                            >
-                                <Typography align="center">  Selecciona dues dates o un rang a la columna de la dreta - ESC per sortir</Typography>
-                                <ChoiceCalendar onChangeDate={onChangeDateOnCalendar} />
-                            </Popover>)
-                            : null} */}
 
                         <ShowDateRangePicker
                             handleClose={handleClose}
@@ -110,14 +92,15 @@ function App() {
                             showCalendar={showCalendar}
                         />
 
-                        {/* <div className="incidences_desglos">
-                            <IncidencesBoard data={llistaIncidenciesTotal} setSelected={setSelected} />
-                        </div> */}
-
                         {incidenciesFiltrades.length !== 0 ?
-                            <div id="principal" className={styles.cardsContainer}>
-                                <IncidencesList incidencies={incidenciesFiltrades} />
-                            </div>
+                            <>
+                                <div className={styles.IncidencesList__title}>
+                                    <Typography style={{ "fontSize": "1.2rem" }}> Incidències de més a menys recents</Typography>
+                                </div>
+                                <div className={styles.IncidencesList}>
+                                    <IncidencesList incidencies={incidenciesFiltrades} />
+                                </div>
+                            </>
                             : null
                         }
                     </Box>

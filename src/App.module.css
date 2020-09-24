@@ -13,8 +13,8 @@
   background-color: rgb(182, 177, 252);
   border-radius: 10px;
   border: 1px solid gray;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  margin-bottom: 3px;
+  margin-right: 3px;
 }
 
 .SearchBarContainer {
@@ -34,3 +34,21 @@
   margin: auto;
   flex-direction: row;
 }
+
+.IncidencesList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    justify-items: center;
+}
+
+.IncidencesList__title {
+  display: flex;
+  margin: auto;
+  border-bottom: 1px solid gray;
+  margin-bottom: 5px;
+  justify-items: center;
+}
+
