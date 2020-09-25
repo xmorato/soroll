@@ -1,5 +1,6 @@
 import { Box, Typography, CircularProgress } from '@material-ui/core'
 import React from 'react'
+import ArticleLoader from './ArticleLoader'
 
 export const Spinner = (props) => {
     return (
@@ -12,6 +13,10 @@ export const Spinner = (props) => {
             </Box>
             <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
                 <Typography color="textPrimary">  {props.text} </Typography>
+            </Box>
+            <Box display={"flex"} style={{ "width": "-webkit-fill-available", "justifyContent": "center" }}>
+
+                <ArticleLoader />
             </Box>
 
         </>
