@@ -18,8 +18,10 @@ git clone https://github.com/xmorato/soroll.git
 ```
 
 ## Set a .env.local in you source directory and add:
+```
 REACT_APP_GOOGLE_SHEETS_DOC_ID=[you_key]
 REACT_APP_MAPBOX_TOKEN=[your_key]
+```
 
 ## Install dependencies & Launch stuff
 ```
