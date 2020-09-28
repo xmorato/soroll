@@ -13,8 +13,8 @@ export const ShowDateRangePicker = ({
       onClose={handleClose}
       elevation={20}
       anchorOrigin={{
-        vertical: "top",
-        horizontal: "top",
+        vertical: "center",
+        horizontal: "center",
       }}
       transformOrigin={{
         vertical: "center",

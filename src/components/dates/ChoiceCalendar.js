@@ -1,20 +1,20 @@
 import React from "react";
 import { DateRangePicker } from "materialui-daterange-picker/dist";
 
-export const ChoiceCalendar = props => {
+export const ChoiceCalendar = (props) => {
   const [open, setOpen] = React.useState(true);
   //const [dateRange, setDateRange] = useState({});
 
   const toggle = () => {
     setOpen(!open);
     //props.onToggle();
-  }
+  };
 
   const handleChange = (range) => {
     //  setDateRange(range);
-    console.log("Range:", range);
-    props.onChangeDate(range)
-  }
+    //console.log("Range:", range);
+    props.onChangeDate(range);
+  };
 
   return (
     <>
@@ -22,8 +22,10 @@ export const ChoiceCalendar = props => {
         open={true}
         toggle={toggle}
         closeOnClickOutside={false}
-        onChange={(range) => { handleChange(range) }}
+        onChange={(range) => {
+          handleChange(range);
+        }}
       />
     </>
   );
-}
+};

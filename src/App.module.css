@@ -7,13 +7,14 @@
   flex-wrap: wrap;
 }
 
-.card {
+.Card {
   padding-bottom: 5px;
   background-color: rgb(182, 177, 252);
-  border-radius: 10px;
+  border-radius: 2px;
   border: 1px solid gray;
   margin-bottom: 3px;
   margin-right: 3px;
+  display: flex;
 }
 
 .SearchBarContainer {
@@ -63,4 +64,19 @@
   margin-top: 5px;
   justify-items: center;
   justify-content: center;
+}
+
+.Card__Compass {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.Card__Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
 }
