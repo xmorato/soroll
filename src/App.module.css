@@ -66,6 +66,20 @@
   justify-content: center;
 }
 
+.Card__Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.Card__CompassContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .Card__Compass {
   display: flex;
   flex-direction: row;
@@ -73,10 +87,8 @@
   align-items: center;
 }
 
-.Card__Header {
+.Card__QRCode {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
+  padding-left: 20px;
+  align-items: flex-end;
 }

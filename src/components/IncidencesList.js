@@ -4,12 +4,15 @@ import styles from "../App.module.css";
 
 import { Card, CardContent, Typography } from "@material-ui/core";
 import ExploreTwoToneIcon from "@material-ui/icons/ExploreTwoTone";
+import QRCode from "react-qr-code";
 
 const IncidencesList = ({ incidencies }) => {
   const navigateTo = (lat, lan) => {
-    const jumpToGoogleMaps = `https://www.google.es/maps?q=${lat},${lan}`;
-    console.log("jumping to: ", jumpToGoogleMaps);
-    window.open(jumpToGoogleMaps);
+    window.open(getGoogleMapsURL(lat, lan));
+  };
+
+  const getGoogleMapsURL = (lat, lan) => {
+    return `https://www.google.es/maps?q=${lat},${lan}`;
   };
 
   return (
@@ -33,16 +36,29 @@ const IncidencesList = ({ incidencies }) => {
                   </div>
                   <Typography>Carrer: {incidencia.carrer}</Typography>
                   <Typography>Comentari:{incidencia.comentari}</Typography>
-                  <div className={styles.Card__Compass}>
-                    <ExploreTwoToneIcon
-                      onClick={() =>
-                        navigateTo(incidencia.coord.lat, incidencia.coord.lon)
-                      }
-                    />
-                    <Typography color="primary" fontSize="small">
-                      Lat: {incidencia.coord.lat}
-                      {" - "}Lon: {incidencia.coord.lon}
-                    </Typography>
+                  <div className={styles.Card__CompassContainer}>
+                    <div className={styles.Card__Compass}>
+                      <ExploreTwoToneIcon
+                        fontSize="small"
+                        onClick={() =>
+                          navigateTo(incidencia.coord.lat, incidencia.coord.lon)
+                        }
+                      />
+                      <Typography color="primary" fontSize="small">
+                        Lat: {incidencia.coord.lat}
+                        {" - "}Lon: {incidencia.coord.lon}
+                      </Typography>
+                    </div>
+                    <div className={styles.Card__QRCode}>
+                      {/*
+                      <QRCode
+                        value={getGoogleMapsURL(
+                          incidencia.coord.lat,
+                          incidencia.coord.lon
+                        )}
+                        size="40"
+                        />*/}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
