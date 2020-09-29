@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/soroll/static/css/main.3044ef19.chunk.css",
-    "main.js": "/soroll/static/js/main.974f0fea.chunk.js",
-    "main.js.map": "/soroll/static/js/main.974f0fea.chunk.js.map",
+    "main.css": "/soroll/static/css/main.9a780bf9.chunk.css",
+    "main.js": "/soroll/static/js/main.4e0fed5f.chunk.js",
+    "main.js.map": "/soroll/static/js/main.4e0fed5f.chunk.js.map",
     "runtime-main.js": "/soroll/static/js/runtime-main.84642ba5.js",
     "runtime-main.js.map": "/soroll/static/js/runtime-main.84642ba5.js.map",
     "static/css/2.0a5b19c0.chunk.css": "/soroll/static/css/2.0a5b19c0.chunk.css",
     "static/js/2.e470b0b9.chunk.js": "/soroll/static/js/2.e470b0b9.chunk.js",
     "static/js/2.e470b0b9.chunk.js.map": "/soroll/static/js/2.e470b0b9.chunk.js.map",
     "index.html": "/soroll/index.html",
-    "precache-manifest.eecea28a838cfb757004394e3b0776c4.js": "/soroll/precache-manifest.eecea28a838cfb757004394e3b0776c4.js",
+    "precache-manifest.757ef55c6e431ac469d69d6af8ae9ef7.js": "/soroll/precache-manifest.757ef55c6e431ac469d69d6af8ae9ef7.js",
     "service-worker.js": "/soroll/service-worker.js",
     "static/css/2.0a5b19c0.chunk.css.map": "/soroll/static/css/2.0a5b19c0.chunk.css.map",
-    "static/css/main.3044ef19.chunk.css.map": "/soroll/static/css/main.3044ef19.chunk.css.map",
+    "static/css/main.9a780bf9.chunk.css.map": "/soroll/static/css/main.9a780bf9.chunk.css.map",
     "static/js/2.e470b0b9.chunk.js.LICENSE.txt": "/soroll/static/js/2.e470b0b9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.84642ba5.js",
     "static/css/2.0a5b19c0.chunk.css",
     "static/js/2.e470b0b9.chunk.js",
-    "static/css/main.3044ef19.chunk.css",
-    "static/js/main.974f0fea.chunk.js"
+    "static/css/main.9a780bf9.chunk.css",
+    "static/js/main.4e0fed5f.chunk.js"
   ]
 }

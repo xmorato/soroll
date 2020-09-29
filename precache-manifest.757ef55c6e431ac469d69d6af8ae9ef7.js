@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "67057e5aa23497c51b2f8925149eb902",
+    "revision": "d54c5ae3c1153f86622c9df1e910094b",
     "url": "/soroll/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/soroll/static/css/2.0a5b19c0.chunk.css"
   },
   {
-    "revision": "f7699bc688b38c9d2a11",
-    "url": "/soroll/static/css/main.3044ef19.chunk.css"
+    "revision": "cad714c1850eacbab155",
+    "url": "/soroll/static/css/main.9a780bf9.chunk.css"
   },
   {
     "revision": "c51a08dcc7a2086d9fd3",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/soroll/static/js/2.e470b0b9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f7699bc688b38c9d2a11",
-    "url": "/soroll/static/js/main.974f0fea.chunk.js"
+    "revision": "cad714c1850eacbab155",
+    "url": "/soroll/static/js/main.4e0fed5f.chunk.js"
   },
   {
     "revision": "366dca43ed05a996ef33",
