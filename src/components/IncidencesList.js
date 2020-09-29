@@ -36,14 +36,14 @@ const IncidencesList = ({ incidencies }) => {
                   </div>
                   <Typography>Carrer: {incidencia.carrer}</Typography>
                   <Typography>Comentari:{incidencia.comentari}</Typography>
-                  <div className={styles.Card__CompassContainer}>
+                  <div
+                    className={styles.Card__CompassContainer}
+                    onClick={() =>
+                      navigateTo(incidencia.coord.lat, incidencia.coord.lon)
+                    }
+                  >
                     <div className={styles.Card__Compass}>
-                      <ExploreTwoToneIcon
-                        fontSize="small"
-                        onClick={() =>
-                          navigateTo(incidencia.coord.lat, incidencia.coord.lon)
-                        }
-                      />
+                      <ExploreTwoToneIcon fontSize="small" />
                       <Typography color="primary" fontSize="small">
                         Lat: {incidencia.coord.lat}
                         {" - "}Lon: {incidencia.coord.lon}

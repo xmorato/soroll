@@ -78,6 +78,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-decoration: none;
+}
+
+.Card__CompassContainer:hover {
+  color: darkorchidgit;
 }
 
 .Card__Compass {
