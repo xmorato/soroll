@@ -128,7 +128,13 @@ function App() {
               </div>
             </>
           ) : null}
-          <Box
+
+        </div>
+      )}
+
+      {!!error && <Error err={error} />}
+      {!!loading && <Spinner text={"Carregant dades"} />}
+      <Box
             display={"flex"}
             style={{
               width: "-webkit-fill-available",
@@ -140,11 +146,6 @@ function App() {
               REC-PL: Ruidos en Castelldefels Playa, fem un millor barri{" "}
             </Typography>
           </Box>
-        </div>
-      )}
-
-      {!!error && <Error err={error} />}
-      {!!loading && <Spinner text={"Carregant dades"} />}
     </>
   );
 }

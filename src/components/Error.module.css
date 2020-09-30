@@ -1,0 +1,30 @@
+.Error__Container {
+  background: rgb(206, 187, 212);
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: normal;
+  width: 80vw;
+  margin: auto;
+  padding: 10px;
+}
+
+.Error__Header {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.Error__ErrorMessage {
+  background: white;
+  color: orange;
+  display: flex;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.Error__Recomentadion {
+  font-style: italic;
+}

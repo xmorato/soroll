@@ -15,6 +15,7 @@ import {Error} from "./components/Error"
 
 jest.mock("./components/UseGetData", () => jest.fn())
 
+
 describe("Test App component", () => {
   it("should render Spinner while isloading and not render error", () => {
     const UseGetData = require('./components/UseGetData')
@@ -33,7 +34,26 @@ describe("Test App component", () => {
     expect(wrapper.find(Error)).toHaveLength(1)
   })
 
+})
+
+
+describe("General test application", ()=> {
+ it ("should render App including footer with or witohut network", () => {
+    const wrapper = shallow(<App />);
+    console.log(wrapper.debug());
+    expect(wrapper.text()).toContain("REC-PL");
+ })
 
 })
+
+afterAll(()=>{
+  console.log("All test checked ..")
+})
+
+
+beforeEach(()=>{
+  console.log("That's the each test beginning ..")
+})
+
 
 
